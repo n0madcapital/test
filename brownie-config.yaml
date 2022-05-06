@@ -1,0 +1,23 @@
+dotenv: .env 
+wallets: 
+  from_key: ${PRIVATE_KEY}
+  from_key_two: ${PRIVATE_KEY_TWO}
+networks:
+  default: rinkeby
+  rinkeby:
+    eth_usd_price_feed: ${O_ADDRESS}
+    verify: True
+  mainnet-fork-dev:
+    eth_usd_price_feed: ${M_ADDRESS}
+    verify: False
+  development: 
+    verify: False
+  ganache-local: 
+    verify: False
+dependencies: 
+  - smartcontractkit/chainlink-brownie-contracts@1.1.1
+compiler: 
+  solc:
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1' 
+      
